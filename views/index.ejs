@@ -1,0 +1,43 @@
+<!-- homepage -->
+<div id="home" class="hero vh-100 d-flex align-items-center" style="margin-top: 100px;">
+  <div class="container">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-4 mb-4">
+      <div class="col-12 col-lg-6">
+        <img class="d-block mx-lg-auto img-fluid" src="/img/homepage.jpg" width="3995" height="5993" loading="lazy" alt="Dessert World">
+      </div>
+      <div class=" col=12 col-lg-6">
+        <h3 class="display-6 fw-bold mb-4">Enjoy the Little Things in Life</h3>
+        <p class="lead">A food blog dedicated to baking and unleashing your creativity in the kitchen. 
+          Do you struggle with making bright red buttercream frosting? 
+          You’re not alone! Learning how to make red frosting that’s actually red and not pinkish red can be a challenge, but we’re up for the task!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus error, labore nam similique amet delectus qui debitis odit molestiae assumenda ipsa maiores ducimus doloremque ea eveniet quam doloribus blanditiis natus.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus error, labore nam similique amet delectus qui debitis odit molestiae assumenda ipsa maiores ducimus doloremque ea eveniet quam doloribus blanditiis natus.
+        </p>
+        <a class="btn btn-outline-secondary" href="/recipes">Explore Recipes</a>
+      </div>
+    </div>
+
+    <!-- Categories Start -->
+
+    <div class="row row-cols-auto col g-2 py-4 justify-content-evenly">
+
+      <% if(categories != '') { %>
+        <% categories.forEach(function(category, index) { %>
+          <a class="col text-center category__link" href="/recipes/<%- category.name %>">
+            <div class="category__img shadow">
+              <img src="img/<%- category.image %>" alt="<%- category.name %>" loading="lazy">
+            </div>
+          </a>
+        <% }) %>
+      <% } %>
+      
+    </div>
+
+
+
+  </div>
+</div>

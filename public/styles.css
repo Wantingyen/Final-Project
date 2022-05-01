@@ -1,0 +1,47 @@
+/* CSS Styles */
+
+.navbar .nav-link {
+  font-size: 18;
+}
+
+h1 {
+  
+}
+
+li{
+  list-style: none;
+}
+
+
+/* Category Pics */
+
+.category__img {
+  display: flex;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 10px;
+  box-shadow: 0px 3px 6px rgba(0,0,0,.16);
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.category__img img {
+  width: 100%;
+  object-fit: cover;
+}
+
+
+
+
+/*.category__link {
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  transition: 250ms all;
+}
+
+.category__link:hover {
+  transform: scale(1.1);
+}
+*/
