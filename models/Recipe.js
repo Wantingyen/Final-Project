@@ -28,4 +28,8 @@ const recipeSchema = new mongoose.Schema({
     },
 })
 
+recipeSchema.index({ name:'text', description: 'text'})
+// wildcard indexing
+//recipeSchema.explore({ "$**" : 'text' })
+
 module.exports = mongoose.model('Recipe', recipeSchema)

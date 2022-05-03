@@ -1,0 +1,162 @@
+<div id="explore" class="d-flex" style="margin-top: 100px;">
+  <div class="container">
+    <h2 style="padding-top: 30‒;padding-top: 5px;padding-bottom: 20px; text-align:center">All Recipes</h2>
+
+     <!-- Category Start -->
+     <div class="d-flex mb-2">
+      <h3 style="margin-bottom: 18px;">Category</h3>
+    </div>
+      <div class="row row-cols-auto col g-2 py-4 justify-content-evenly">
+        <% if(typeof category !== 'undefined' && category.length > 0) { %>
+          <% category.forEach(function(category, explore) { %>
+            <a href="/category/<%- category.name %>" class="col text-center category__link">
+              <div class="category__img shadow">
+                <img src="/img/<%- category.image %>" alt="<%= category.name %>" loading="lazy">
+              </div>
+            </a>
+          <% }) %>
+        <% } %>
+      </div>
+
+      <!-- Categories End -->
+
+
+
+
+
+
+    <!-- Cake Start -->
+    <section class="pb-4 pt-4">
+      <div class="d-flex mb-2">
+        <h3 style="margin-bottom: 18px;">Cake Recipes</h3>
+      </div>
+      <div class="row row-cols-1 row-cols-md-4 g-4">
+        <% if(dessert != '') { %>
+        <% dessert.cake.forEach(function(recipe, explore){ %>
+          <div class="col">
+            <div class="card h-100 category__link card-shadow">
+              <a href="/recipe/<%= recipe._id %>">
+                <img src="/img/<%= recipe.image %>" class="card-img-top" alt="<%= recipe.name %>">
+              </a>  
+              <div class="card-body">
+                <a href="/recipe/<%= recipe._id %>" style="text-decoration:none; color:black;"><h5><%= recipe.name %></h5></a>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+        <% } else { %>
+        <p>No Items Found</p>
+        <% } %>
+      </div>
+    </section>
+    <!-- Cake End -->
+
+
+    
+    <!-- Cookie Start -->
+    <section class="pb-4 pt-4">
+      <div class="d-flex mb-2">
+        <h3 style="margin-bottom: 18px;">Cookie Recipes</h3>
+      </div>
+      <div class="row row-cols-1 row-cols-md-4 g-4">
+        <% if(dessert != '') { %>
+        <% dessert.cookie.forEach(function(recipe, explore){ %>
+          <div class="col">
+            <div class="card h-100 category__link card-shadow">
+              <a href="/recipe/<%= recipe._id %>">
+                <img src="/img/<%= recipe.image %>" class="card-img-top" alt="<%= recipe.name %>">
+              </a> 
+              <div class="card-body">
+                <a href="/recipe/<%= recipe._id %>" style="text-decoration:none; color:black;"><h5><%= recipe.name %></h5></a>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+        <% } else { %>
+        <p>No Items Found</p>
+        <% } %>
+      </div>
+    </section>
+    <!-- Cookie End -->
+
+
+
+    <!-- Macaron Recipes -->
+    <section class="pb-4 pt-4">
+      <div class="d-flex mb-2">
+        <h3 style="margin-bottom: 18px;">Macaron Recipes</h3>
+      </div>
+      <div class="row row-cols-1 row-cols-md-4 g-4">
+        <% if(dessert != '') { %>
+        <% dessert.macaron.forEach(function(recipe, explore){ %>
+          <div class="col">
+            <div class="card h-100 category__link card-shadow">
+              <a href="/recipe/<%= recipe._id %>">
+                <img src="/img/<%= recipe.image %>" class="card-img-top" alt="<%= recipe.name %>">
+              </a> 
+              <div class="card-body">
+                <a href="/recipe/<%= recipe._id %>" style="text-decoration:none; color:black;"><h5><%= recipe.name %></h5></a>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+        <% } else { %>
+        <p>No Items Found</p>
+        <% } %>
+      </div>
+    </section>
+    <!-- Macaron End -->
+
+    <!-- Ice Cream Recipes -->
+    <section class="pb-4 pt-4">
+    <div class="d-flex mb-2">
+      <h3 style="margin-bottom: 18px;">Ice Cream Recipes</h3>
+    </div>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <% if(dessert != '') { %>
+      <% dessert.icecream.forEach(function(recipe, explore){ %>
+        <div class="col">
+          <div class="card h-100 category__link card-shadow">
+            <a href="/recipe/<%= recipe._id %>">
+              <img src="/img/<%= recipe.image %>" class="card-img-top" alt="<%= recipe.name %>">
+            </a> 
+            <div class="card-body">
+              <a href="/recipe/<%= recipe._id %>" style="text-decoration:none; color:black;"><h5><%= recipe.name %></h5></a>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+      <% } else { %>
+      <p>No Items Found</p>
+      <% } %>
+    </div>
+  </section>
+  <!-- Ice Cream End -->
+
+
+    <!-- Beverage Recipes -->
+    <section class="pb-4 pt-4">
+      <div class="d-flex mb-2">
+        <h3 style="margin-bottom: 18px;">Beverage Recipes</h3>
+      </div>
+      <div class="row row-cols-1 row-cols-md-4 g-4">
+        <% if(dessert != '') { %>
+        <% dessert.beverage.forEach(function(recipe, explore){ %>
+          <div class="col">
+            <div class="card h-100 category__link card-shadow">
+              <a href="/recipe/<%= recipe._id %>">
+                <img src="/img/<%= recipe.image %>" class="card-img-top" alt="<%= recipe.name %>">
+              </a> 
+              <div class="card-body">
+                <a href="/recipe/<%= recipe._id %>" style="text-decoration:none; color:black;"><h5><%= recipe.name %></h5></a>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+        <% } else { %>
+        <p>No Items Found</p>
+        <% } %>
+      </div>
+    </section>
+    <!-- Beverage End -->
+    

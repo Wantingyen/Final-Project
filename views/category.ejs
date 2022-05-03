@@ -1,0 +1,37 @@
+<div id="category" class="d-flex" style="margin-top: 100px;">
+  <div class="container">
+
+     <!-- Category Start -->
+
+      <div class="row row-cols-auto col g-2 py-4 justify-content-evenly">
+        <% if(typeof category !== 'undefined' && category.length > 0) { %>
+          <% category.forEach(function(category, index) { %>
+            <a href="/category/<%- category.name %>" class="col text-center category__link">
+              <div class="category__img shadow">
+                <img src="/img/<%- category.image %>" alt="<%= category.name %>" loading="lazy">
+              </div>
+            </a>
+          <% }) %>
+        <% } %>
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-4 g-4">
+        <% if(typeof categoryById !== 'undefined' && categoryById.length > 0) { %>
+          <% categoryById.forEach(function(recipe, index){ %>
+          <div class="col">
+            <div class="card h-100 category__link card-shadow">
+              <a href="/recipe/<%= recipe._id %>">
+                <img src="/img/<%= recipe.image %>" class="card-img-top" alt="<%= recipe.name %>">
+              </a>  
+              <div class="card-body">
+                <a href="/recipe/<%= recipe._id %>" style="text-decoration:none; color:black;"><h5><%= recipe.name %></h5></a>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+          <% } else { %>
+            <p>No items found.</p>
+          <% } %>
+        </div>
+
+      <!-- Categories End -->

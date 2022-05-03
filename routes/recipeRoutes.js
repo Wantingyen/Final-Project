@@ -8,8 +8,13 @@ App Routes - list all of pages, they gonna link to recipeController
 
 // description - homepage
 router.get('/', recipeController.homepage)
-router.get('/categories', recipeController.exploreCategories)
-
+router.get('/explore', recipeController.exploreRecipes)
+router.get('/category', recipeController.exploreCategory)
+router.get('/category/:id', recipeController.exploreCategoryById)
+router.get('/recipe/:id', recipeController.exploreRecipeById)
+router.post('/search', recipeController.searchRecipe)
+router.get('/about', recipeController.about)
+router.get('/contact', recipeController.contact)
 
 
 module.exports = router

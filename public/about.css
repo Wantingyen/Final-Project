@@ -1,0 +1,43 @@
+
+img {
+  width: 100%;
+}
+
+
+.col-img {
+  background-image: url(/img/baking.jpg);
+  background-position: center;
+  background-size: cover;
+  min-height: 500px;
+}
+
+.portfolio {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(37, 39, 71, 0.7);
+  padding: 30px;
+  display: flex;
+  align-items: flex-end;
+  transition: all 0.4s ease;
+  opacity: 0;
+}
+
+.portfolio img {
+  transition: all 0.4s ease;
+}
+
+.portfolio:hover .overlay {
+  opacity: 1;
+}
+
+.portfolio:hover img {
+  transform: scale(1.1);
+}

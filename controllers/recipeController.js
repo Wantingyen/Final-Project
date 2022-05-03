@@ -5,65 +5,123 @@ const Category = require('../models/Category')
 const Recipe = require('../models/Recipe')
 
 /** 
- * get/
+ * get
  * homepage
  * */ 
 
- exports.homepage = async(req, res) => {
-  try {
-    const limitNumber = 5;
-    const categories = await Category.find({}).limit(limitNumber);
-    res.render('index', { title: 'Dessert World - The Best Dessert Recipes', categories })
-  } catch (error) {
-    res.satus(500).send(NOT_FOUND_MSG)
-  }
+
+exports.homepage = async(req, res) => {
+  res.render('index', { title: 'Dessert World - The Best Dessert Recipes' })
 }
 
 
 /** 
  * get/
- * categories
+ * explore all recipes
  * */ 
 
-exports.exploreCategories = async(req, res) => {
+
+exports.exploreRecipes = async(req, res) => {
   try {
-    const limitNumber = 20;
-    const categories = await Category.find({}).limit(limitNumber);
-    res.render('categories', { title: 'Dessert World - All Recipes', categories })
+    const limitNumber = 5
+    const category = await Category.find({}).limit(limitNumber)
+    const cake = await Recipe.find({ 'category': 'Cake'}).limit(limitNumber)
+    const cookie = await Recipe.find({ 'category': 'Cookie'}).limit(limitNumber)
+    const macaron = await Recipe.find({ 'category': 'Macaron'}).limit(limitNumber)
+    const icecream= await Recipe.find({ 'category': 'Ice Cream'}).limit(limitNumber)
+    const beverage = await Recipe.find({ 'category': 'Beverage'}).limit(limitNumber)
+
+    const dessert = { cake, cookie, macaron, icecream, beverage }
+
+    res.render('explore', { title: 'All Recipes - Dessert World', category, dessert })
   } catch (error) {
     res.status(500).send(NOT_FOUND_MSG)
   }
 }
 
 
+/**
+ * get categories
+ * 這個頁面不會出現在網頁中任何連結
+ * */ 
 
-// async function insertDymmyRecipeData(){
-//     try {
-//         await Recipe.insertMany([
-//             {
-//                 'name': 'Strawberry Drip Cake',
-//                 'description': 
-//                 'This colorful drip cake is made with vanilla cake layers, strawberry frosting and a gorgeous white chocolate ganache drip. This cake is as pleasing to the eye as it is to the sweet tooth!',
-//                 'ingredients': [
-//                     'all-purpose flour 265g',
-//                     'granulated sugar 400g',
-//                     'baking powder 6g',
-//                     'salt 3g',
-//                     'unsalted butter 150g',
-//                     'egg whites 160ml',
-//                     'vegetable oil 14ml',
-//                     'vanilla extract 4ml',
-//                     'whipping cream 80ml',
-//                 ],
-//                 'category': 'Cake',
-//                 'image': 'strawberry-drip-cake.jpg'
-//                 
-//             },
-            
-//         ]);
-//     }   catch(error){
-//         console.log('err', + error)
-//     }
-// }
 
-// insertDymmyRecipeData()
+exports.exploreCategory = async(req, res) => {
+  try {
+    const category = await Category.find({})
+    res.render('category', { title: 'Category - Dessert World', category } )
+  } catch (error) {
+    res.status(500).send(NOT_FOUND_MSG)
+  }
+} 
+
+
+/**
+ * get category by id
+ * category
+// */
+
+exports.exploreCategoryById = async(req, res) => { 
+  try {
+    let categoryId = req.params.id
+    const categoryById = await Recipe.find({ 'category': categoryId })
+    res.render('category', { title: 'Category - Dessert World', categoryById } )
+  } catch (error) {
+    res.status(500).send(NOT_FOUND_MSG)
+  }
+} 
+
+
+
+
+/** 
+ * get recipe by id
+ * recipe
+ * */ 
+
+ exports.exploreRecipeById = async(req, res) => {
+  try {
+    let recipeId = req.params.id
+    const recipe = await Recipe.findById(recipeId)
+    res.render('recipe', { title: 'Recipe - Dessert World', recipe } )
+  } catch (error) {
+    res.status(500).send(NOT_FOUND_MSG)
+  }
+} 
+
+
+/** 
+ * post/
+ * serch
+ * */ 
+
+ exports.searchRecipe = async(req, res) => {
+  try {
+    let searchTerm = req.body.searchTerm
+    let recipe = await Recipe.find( { $text: { $search: searchTerm, $diacriticSensitive: true } })
+    res.render('search', { title: 'Search - Dessert World', recipe } )
+  } catch (error) {
+    res.status(500).send(NOT_FOUND_MSG)
+  }
+  
+}
+
+
+/** 
+ * get 
+ * about page
+ * */ 
+
+ exports.about = async(req, res) => {
+  res.render('about', { title: 'About - Dessert World' })
+}
+
+
+/** 
+ * get 
+ * contact page
+ * */ 
+
+ exports.contact = async(req, res) => {
+  res.render('contact', { title: 'Contact - Dessert World' })
+ }

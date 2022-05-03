@@ -1,43 +1,21 @@
 <!-- homepage -->
-<div id="home" class="hero vh-100 d-flex align-items-center" style="margin-top: 100px;">
+<div id="home" class="d-flex align-items-center" style="margin-top: 100px;">
   <div class="container">
     <div class="row flex-lg-row-reverse align-items-center g-5 py-4 mb-4">
-      <div class="col-12 col-lg-6">
+      <div class="col-lg-6 home-img py-5">
+      </div>
+      <!-- <div class="col-12 col-lg-6">
         <img class="d-block mx-lg-auto img-fluid" src="/img/homepage.jpg" width="3995" height="5993" loading="lazy" alt="Dessert World">
-      </div>
+      </div> -->
       <div class=" col=12 col-lg-6">
-        <h3 class="display-6 fw-bold mb-4">Enjoy the Little Things in Life</h3>
-        <p class="lead">A food blog dedicated to baking and unleashing your creativity in the kitchen. 
-          Do you struggle with making bright red buttercream frosting? 
-          You’re not alone! Learning how to make red frosting that’s actually red and not pinkish red can be a challenge, but we’re up for the task!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus error, labore nam similique amet delectus qui debitis odit molestiae assumenda ipsa maiores ducimus doloremque ea eveniet quam doloribus blanditiis natus.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus error, labore nam similique amet delectus qui debitis odit molestiae assumenda ipsa maiores ducimus doloremque ea eveniet quam doloribus blanditiis natus.
-        </p>
-        <a class="btn btn-outline-secondary" href="/recipes">Explore Recipes</a>
+        <p class="display-6 fw-bold mb-4" style="padding-bottom: 10px;">Enjoy the Little Things in Life</p>
+        <p style="font-size: 18px;padding-bottom: 20px;">Do you struggle with making dessert at home? 
+          You’re not alone! Learning how to make a perfect dessert can be a challenge, but we're up for the task!
+          <br>
+          We have the best recipes that is not just showing step-by-step method, but also give you tips to help you master your baking skills.
+          With our recipes you'll fall in love and enjoy baking at home again!</p>
+        <a class="btn btn-lg" href="/explore">Explore Recipes</a>
       </div>
     </div>
-
-    <!-- Categories Start -->
-
-    <div class="row row-cols-auto col g-2 py-4 justify-content-evenly">
-
-      <% if(categories != '') { %>
-        <% categories.forEach(function(category, index) { %>
-          <a class="col text-center category__link" href="/recipes/<%- category.name %>">
-            <div class="category__img shadow">
-              <img src="img/<%- category.image %>" alt="<%- category.name %>" loading="lazy">
-            </div>
-          </a>
-        <% }) %>
-      <% } %>
-      
-    </div>
-
-
-
   </div>
 </div>
