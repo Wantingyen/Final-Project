@@ -7,7 +7,7 @@
     <% if(recipe != '') { %>
       <% recipe.forEach(function(recipe, index){ %>
         <div class="col">
-          <div class="card h-100">
+          <div class="card h-100 category__link card-shadow">
             <a href="/recipe/<%= recipe._id %>">
               <img src="/img/<%= recipe.image %>" class="card-img-top" alt="<%= recipe.name %>">
             </a>  
