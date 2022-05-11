@@ -15,6 +15,8 @@ router.get('/recipe/:id', recipeController.exploreRecipeById)
 router.post('/search', recipeController.searchRecipe)
 router.get('/about', recipeController.about)
 router.get('/contact', recipeController.contact)
+router.post('/contact', recipeController.comment)
+
 
 
 module.exports = router

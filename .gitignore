@@ -1,2 +1,6 @@
 node_modules
-.env 
+.env
+views/thread.ejs
+public/script.js
+public/css/thread.css
+models/Thread.js

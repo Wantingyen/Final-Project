@@ -1,0 +1,81 @@
+.card-header {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border-bottom: solid 1px #DAB332;
+}
+
+/* .comments {
+  padding: 5px 20px 5px 20px;
+} */
+
+.item {
+  overflow: hidden;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.label {
+  float: left;
+  margin-right: 20px;
+  width: 135px;
+  padding-left: 20px;
+}
+
+.input-name {
+  float: left;
+  width: 300px;
+}
+
+.input {
+  float: left;
+  width: 500px;
+}
+
+input[type="text"] {
+  border: solid 1px #aaa;
+  padding: 6px;
+  border-radius: 5px;
+}
+
+textarea {
+  border: solid 1px #aaa;
+  border-radius: 5px;
+  height: 110px;
+}
+
+.button-area {
+  padding-right: 60px;
+  text-align: right;
+}
+
+.co-btn:hover{
+  transform: scale(1.1);
+}
+
+input[type="submit"] {
+  background: #DAB332;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px 10px;
+  margin: 0 7px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px black;
+  cursor: pointer;
+  
+}
+
+
+input[type="reset"] {
+  background: white;
+  border: none;
+  color: #DAB332;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px 10px;
+  margin: 0 7px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px black;
+  cursor: pointer;
+}

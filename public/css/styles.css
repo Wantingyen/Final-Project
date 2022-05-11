@@ -28,8 +28,9 @@ p, a, input, label, textarea, span, ul, li {
 .home-img {
   background-image: url(/img/homepage.jpg);
   background-position: center;
-  background-size: cover; /* 画像の全部を収めることができる。 */
+  background-size: cover;
   min-height: 600px;
+  border-radius: 10px;
 }
 
 .btn{
@@ -83,7 +84,7 @@ p, a, input, label, textarea, span, ul, li {
   text-align: center;
 }
 
-.search{
+.search {
   width: 500px;
   height: 200px;
   line-height: 200px;
@@ -99,6 +100,6 @@ li{
 
 /* recipe pics*/
 
-.card-shadow{
+.card-shadow {
   box-shadow: 0px 3px 6px rgba(0,0,0,.16);
 }

@@ -1,5 +1,4 @@
 const NOT_FOUND_MSG = 'Page Not Found'
-const NOT_FOUND_RECIPE = 'No Items Found'
 const BAD_REQ_DATA = 'One or more missing request parameters'
 const SERVER_ERROR_MSG = 'Sorry, our server has an internal error. Please try again shortly!'
 
