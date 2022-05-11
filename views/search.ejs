@@ -3,6 +3,7 @@
 
     <h1 class="pb-4">Search Results</h1>
 
+<<<<<<< HEAD
       <div class="row row-cols-1 row-cols-md-4 g-4">
         <% if(recipe != '') { %>
           <% recipe.forEach(function(recipe, index){ %>
@@ -15,6 +16,18 @@
                   <a href="/recipe/<%= recipe._id %>" style="text-decoration:none; color:black;"><h5><%= recipe.name %></h5></a>
                 </div>
               </div>
+=======
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    <% if(recipe != '') { %>
+      <% recipe.forEach(function(recipe, index){ %>
+        <div class="col">
+          <div class="card h-100 category__link card-shadow">
+            <a href="/recipe/<%= recipe._id %>">
+              <img src="/img/<%= recipe.image %>" class="card-img-top" alt="<%= recipe.name %>">
+            </a>  
+            <div class="card-body">
+              <a href="/recipe/<%= recipe._id %>" style="text-decoration:none; color:black;"><h5><%= recipe.name %></h5></a>
+>>>>>>> 40c6441965c4a56527379faebdb5cdf62afb212a
             </div>
           
           <% }) %>
@@ -26,6 +39,10 @@
         <% } %>
       </div>
   </div>
+<<<<<<< HEAD
 </div>
   
+=======
+
+>>>>>>> 40c6441965c4a56527379faebdb5cdf62afb212a
 
